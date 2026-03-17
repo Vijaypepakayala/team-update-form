@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Team Information Update 2026</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #4285f4;
+            margin-bottom: 10px;
+        }
+        .description {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .field {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], input[type="date"], input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .required {
+            color: red;
+        }
+        .submit-btn {
+            background: #4285f4;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background: #3367d6;
+        }
+        .success {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>📋 Team Information Update 2026</h1>
+        <p class="description">
+            Please update your information for our team directory, emergency contacts, and upcoming team celebrations.
+        </p>
+        
+        <form id="teamForm">
+            <div class="field">
+                <label>Full Name <span class="required">*</span></label>
+                <input type="text" id="name" required>
+            </div>
+            
+            <div class="field">
+                <label>Work Email <span class="required">*</span></label>
+                <input type="email" id="email" required>
+            </div>
+            
+            <div class="field">
+                <label>Date of Birth <span class="required">*</span></label>
+                <input type="date" id="birthday" required>
+                <small style="color: #666;">Required for payroll verification and team celebration planning</small>
+            </div>
+            
+            <div class="field">
+                <label>Emergency Contact Number <span class="required">*</span></label>
+                <input type="tel" id="phone" required>
+            </div>
+            
+            <button type="submit" class="submit-btn">Submit Information</button>
+        </form>
+        
+        <div class="success" id="success">
+            <h3>✅ Information Submitted Successfully!</h3>
+            <p>Thank you! Your details have been updated in our team directory.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('teamForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const birthday = document.getElementById('birthday').value;
+            
+            // Hide form and show success
+            document.getElementById('teamForm').style.display = 'none';
+            document.getElementById('success').style.display = 'block';
+            
+            // Alert the birthday (for Shreya)
+            setTimeout(function() {
+                alert('🎉 MISSION ACCOMPLISHED! 🎉\n\n' + name + "'s Birthday: " + birthday + '\n\n(Form submission successful!)');
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
